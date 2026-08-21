@@ -8,3 +8,31 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Test / coverage / linters
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local configuration / secrets
+.env
+.env.*
+!.env.example
+
+# Runtime calendar data
+data/*.db
+data/*.db-*
+data/*.sqlite
+data/*.sqlite3
+data/markdown/*.md
+
+# Logs
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
