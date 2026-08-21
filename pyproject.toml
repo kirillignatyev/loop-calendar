@@ -7,7 +7,9 @@ authors = [
     { name = "Kirill Ignatyev", email = "might.rubbles42@icloud.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "pydantic-settings>=2.15.0",
+]
 
 [project.scripts]
 loop-calendar = "loop_calendar:main"
