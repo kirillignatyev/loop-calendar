@@ -1,0 +1,17 @@
+[project]
+name = "loop-calendar"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kirill Ignatyev", email = "might.rubbles42@icloud.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+loop-calendar = "loop_calendar:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
