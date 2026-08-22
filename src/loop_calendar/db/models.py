@@ -49,6 +49,12 @@ class EventModel(Base):
     )
 
     user_id: Mapped[str] = mapped_column(
+        ForeignKey("users.id"),
+        nullable=False,
+        index=True,
+    )
+
+    kind: Mapped[str] = mapped_column(
         event_kind_type,
         bullable=False,
         index=True,
@@ -64,6 +70,9 @@ class EventModel(Base):
         nullable=False,
         index=True,
     )
+
+    start_time: Mapped[time | None] = mapped_column(Time)
+    end_time: Mapped[time | None] = mapped_column(Time)
 
     title: Mapped[str | None] = mapped_column(String(500))
 
