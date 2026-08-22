@@ -10,7 +10,7 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    loop_slash_token: str = ""
+    loop_slash_token: str
     database_url: str = "sqlite:///data/calendar.db"
     timezone: str = "Europe/Moscow"
 
