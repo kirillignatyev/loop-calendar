@@ -14,5 +14,5 @@ class EventNotFound(CalendarError):
     pass
 
 
-class PermissonDenied(CalendarError):
+class PermissionDenied(CalendarError):
     pass
