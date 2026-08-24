@@ -482,3 +482,7 @@ uv run ruff check .
 uv run pytest
 uv run bandit -c pyproject.toml -r .
 ```
+
+## Лицензия
+
+Проект распространяется под лицензией [MIT](LICENSE).
