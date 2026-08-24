@@ -32,7 +32,7 @@ def loop_command(
     session: Annotated[Session, Depends(get_session)],
     settings: Annotated[Settings, Depends(get_settings)],
     text: Annotated[str, Form()] = "",
-    token: Annotated[str, Form()] = "",
+    token: Annotated[str | None, Form()] = None,
     user_id: Annotated[str, Form()] = "",
     user_name: Annotated[str, Form()] = "",
     channel_id: Annotated[str | None, Form()] = None,
@@ -141,7 +141,7 @@ def loop_command(
 
 def verify_loop_request(
     *,
-    form_token: str,
+    form_token: str | None,
     authorization: str | None,
     expected_token: str,
 ) -> None:
