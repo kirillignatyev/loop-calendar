@@ -29,8 +29,6 @@ _KIND_ALIASES = {
 _VIEW_ALIASES = {
     "today": "today",
     "сегодня": "today",
-    "tomorrow": "tomorrow",
-    "завтра": "tomorrow",
     "week": "week",
     "неделя": "week",
     "mine": "mine",
@@ -130,6 +128,7 @@ def parse_command(text: str, *, today: date) -> CalendarCommand:
             end_time=end_time,
             title=title,
         )
+    raise InvalidCommand(f"Неизвестная команда `{parts[0]}`. Используйте `/cal help`.")
 
 
 def _require_count(parts: list[str], expected: int, usage: str) -> None:

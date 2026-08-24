@@ -56,7 +56,7 @@ class EventModel(Base):
 
     kind: Mapped[str] = mapped_column(
         event_kind_type,
-        bullable=False,
+        nullable=False,
         index=True,
     )
 
