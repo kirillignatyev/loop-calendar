@@ -24,7 +24,7 @@ class CalendarService:
         self.repository.commit()
         return user
 
-    def ad_status(
+    def add_status(
         self,
         *,
         user_id: str,
