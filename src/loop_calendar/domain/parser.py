@@ -1,6 +1,6 @@
 import re
 import shlex
-from datetime import date, datetime, time, timedelta
+from datetime import date, time, timedelta
 
 from .commands import (
     AddMeeting,
@@ -228,8 +228,11 @@ def parse_date_range(value: str, *, today: date) -> tuple[date, date]:
 
 def _parse_time(value: str) -> time:
     try:
-        return datetime.strptime(value, "%H:%M").time()
-    except ValueError as exc:
+        hours, minutes = value.split(":")
+        if len(hours) != 2 or len(minutes) != 2:
+            raise ValueError
+        return time(hour=int(hours), minute=int(minutes))
+    except (ValueError, TypeError) as exc:
         raise InvalidCommand(f"Некорректное время `{value}`.") from exc
 
 

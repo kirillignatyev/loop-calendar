@@ -10,7 +10,9 @@ from loop_calendar.services.markdown import (
 )
 
 
-def make_user(user_id: str, username: str, display_name: str | None = None) -> UserModel:
+def make_user(
+    user_id: str, username: str, display_name: str | None = None
+) -> UserModel:
     return UserModel(id=user_id, username=username, display_name=display_name)
 
 

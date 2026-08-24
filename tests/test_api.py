@@ -25,7 +25,7 @@ def api_database() -> Database:
 def client(
     api_database: Database,
     monkeypatch: pytest.MonkeyPatch,
-) -> Generator[TestClient, None, None]:
+) -> Generator[TestClient]:
     app = FastAPI()
     app.include_router(loop_api.router)
 
@@ -35,7 +35,7 @@ def client(
         timezone="Europe/Riga",
     )
 
-    def override_session() -> Generator[Session, None, None]:
+    def override_session() -> Generator[Session]:
         with api_database.session() as session:
             yield session
 

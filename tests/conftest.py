@@ -15,7 +15,7 @@ def database() -> Database:
 
 
 @pytest.fixture
-def session(database: Database) -> Generator[Session, None, None]:
+def session(database: Database) -> Generator[Session]:
     with database.session() as session:
         yield session
 

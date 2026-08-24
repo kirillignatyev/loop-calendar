@@ -96,7 +96,7 @@ def loop_command(
                 )
 
             else:
-                raise RuntimeError(f"Unsupported calendar scope: {command.scope!r}")
+                raise TypeError(f"Unsupported command type: {type(command)!r}")
 
         elif isinstance(command, AddStatus):
             event = calendar_service.add_status(
@@ -125,7 +125,7 @@ def loop_command(
             response_text = renderer.render_deleted(event)
 
         else:
-            raise RuntimeError(f"Unsupported command type: {type(command)!r}")
+            raise TypeError(f"Unsupported command type: {type(command)!r}")
 
     except CalendarError as exc:
         return {

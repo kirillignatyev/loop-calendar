@@ -34,7 +34,7 @@ class UserModel(Base):
         nullable=False,
     )
 
-    events: Mapped[list["EventModel"]] = relationship(
+    events: Mapped[list[EventModel]] = relationship(
         back_populates="user",
         cascade="all, delete-orphan",
     )

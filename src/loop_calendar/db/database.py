@@ -48,7 +48,7 @@ class Database:
         Base.metadata.create_all(self.engine)
 
     @contextmanager
-    def session(self) -> Generator[Session, None, None]:
+    def session(self) -> Generator[Session]:
         session = self.session_factory()
         try:
             yield session
@@ -63,6 +63,6 @@ def get_database() -> Database:
 
 def get_session(
     database: Annotated[Database, Depends(get_database)],
-) -> Generator[Session, None, None]:
+) -> Generator[Session]:
     with database.session() as session:
         yield session
