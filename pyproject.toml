@@ -38,3 +38,6 @@ package = true
 [tool.uv.build-backend]
 module-root = "src"
 module-name = "loop_calendar"
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
